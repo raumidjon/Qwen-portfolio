@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Security - Umidjon Raxmonjonov</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-color: #020617;
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --accent-color: #38bdf8; /* Kiberxavfsizlik uchun yorqin ko'k rang */
+        --text-color: #f8fafc;
+        --secondary-text: #94a3b8;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Consolas', 'Monaco', monospace; /* Texnik vibe berish uchun */
+        background: radial-gradient(circle at bottom left, #0f172a 0%, #020617 100%);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        width: 100%;
+        background: var(--glass-bg);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(56, 189, 248, 0.2); /* Ko'k rangli chegara */
+        border-radius: 24px;
+        padding: 45px;
+        box-shadow: 0 0 40px rgba(56, 189, 248, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Fon uchun matrix effekti kabi chiziqlar */
+      .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        animation: scan 3s linear infinite;
+      }
+
+      @keyframes scan {
+        0% {
+          top: 0;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+      }
+
+      .back-btn:hover {
+        text-shadow: 0 0 10px var(--accent-color);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .header h1 {
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin: 10px 0;
+        color: var(--accent-color);
+      }
+
+      .header p {
+        color: var(--secondary-text);
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .security-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .sec-card {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.3s;
+        text-align: left;
+      }
+
+      .sec-card:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .sec-card i {
+        font-size: 2rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+      }
+
+      .sec-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .sec-card p {
+        font-size: 0.85rem;
+        color: var(--secondary-text);
+        line-height: 1.6;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .bottom-info {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--accent-color);
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="javascript:history.back()" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Asosiy sahifaga qaytish
+      </a>
+
+      <div class="header">
+        <h1>Cyber Security</h1>
+        <p>Veb-saytingiz xavfsizligini ta'minlash va tashqi hujumlardan himoya qilish tizimi.</p>
+      </div>
+
+      <div class="security-grid">
+        <div class="sec-card">
+          <i class="fas fa-user-shield"></i>
+          <h3>Pentesting</h3>
+          <p>
+            Tizimdagi zaifliklarni aniqlash uchun nazorat ostidagi "hujumlar" o'tkazish va ularni
+            yopish.
+          </p>
+        </div>
+        <div class="sec-card">
+          <i class="fas fa-file-signature"></i>
+          <h3>SSL & Encryption</h3>
+          <p>Ma'lumotlar almashinuvini shifrlash va xavfsiz protokollarni (HTTPS) sozlash.</p>
+        </div>
+        <div class="sec-card">
+          <div style="font-size: 2rem; color: #38bdf8; margin-bottom: 20px">
+            <i class="fas fa-bug"></i>
+          </div>
+          <h3>DDoS Protection</h3>
+          <p>
+            Saytni katta hajmdagi sun'iy so'rovlar (DDoS) hujumlaridan himoya qilish va
+            barqarorlikni saqlash.
+          </p>
+        </div>
+      </div>
+
+      <div class="bottom-info">
+        <i class="fas fa-lock"></i> Tizim himoyalangan va 24/7 monitoring ostida.
+      </div>
+    </div>
+  </body>
+</html>

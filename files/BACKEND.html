@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend Development - Umidjon Raxmonjonov</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-color: #0d1117;
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --accent-color: #3fb950; /* Backend uchun "kod" yashil rangi */
+        --text-color: #ffffff;
+        --secondary-text: #8b949e;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(circle at top right, #161b22, #0d1117);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        width: 100%;
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      }
+
+      .back-btn {
+        display: inline-block;
+        color: var(--secondary-text);
+        text-decoration: none;
+        margin-bottom: 30px;
+        font-size: 0.95rem;
+        transition: 0.3s;
+      }
+
+      .back-btn:hover {
+        color: var(--accent-color);
+        transform: translateX(-5px);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .header h1 {
+        font-size: 2.8rem;
+        margin: 10px 0;
+        background: linear-gradient(to right, #3fb950, #2ea043);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .header p {
+        color: var(--secondary-text);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .feature-card {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.3s;
+        text-align: center;
+      }
+
+      .feature-card:hover {
+        border-color: var(--accent-color);
+        background: rgba(63, 185, 80, 0.05);
+        transform: translateY(-8px);
+      }
+
+      .feature-card i {
+        font-size: 2.5rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+      }
+
+      .tech-list {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+
+      .tech-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 35px;
+        font-size: 3rem;
+        margin-top: 25px;
+        opacity: 0.8;
+      }
+
+      .tech-icons i:hover {
+        opacity: 1;
+        color: var(--accent-color);
+        transform: scale(1.1);
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="javascript:history.back()" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Asosiy sahifaga qaytish
+      </a>
+
+      <div class="header">
+        <h1>Backend Development</h1>
+        <p>
+          Veb-saytlarning "miyasi" — ma'lumotlar bilan ishlash, xavfsizlik va tezkor algoritmlar
+          yaratish.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-database"></i>
+          <h3>Database Management</h3>
+          <p>SQL va NoSQL ma'lumotlar bazalari bilan optimallashgan holda ishlash.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-server"></i>
+          <h3>API Development</h3>
+          <p>
+            Frontend va mobil ilovalar uchun xavfsiz va tezkor REST API/GraphQL interfeyslarini
+            yaratish.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Server Security</h3>
+          <p>Ma'lumotlar xavfsizligini ta'minlash va serverni tashqi hujumlardan himoya qilish.</p>
+        </div>
+      </div>
+
+      <div class="tech-list">
+        <h3>Ishlatiladigan Texnologiyalar</h3>
+        <div class="tech-icons">
+          <i class="fab fa-node-js" title="Node.js"></i>
+          <i class="fab fa-python" title="Python"></i>
+          <i class="fab fa-php" title="PHP"></i>
+          <i class="fas fa-database" title="SQL/MongoDB"></i>
+          <i class="fab fa-docker" title="Docker"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

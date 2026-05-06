@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Development - Umidjon Raxmonjonov</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-color: #0f0c29;
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --accent-color: #ff007a; /* Mobile uchun pushti-binafsha rang */
+        --text-color: #ffffff;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #1a1a2e, #16213e);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        width: 100%;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        padding: 40px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      }
+
+      .back-btn {
+        display: inline-block;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1rem;
+        margin-bottom: 25px;
+        transition: 0.3s;
+        opacity: 0.8;
+      }
+
+      .back-btn:hover {
+        opacity: 1;
+        transform: translateX(-5px);
+        color: var(--accent-color);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      .header h1 {
+        font-size: 2.8rem;
+        background: linear-gradient(to right, #ff007a, #bc13fe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 10px 0;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.04);
+        padding: 25px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.4s;
+      }
+
+      .card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-10px);
+        border-color: var(--accent-color);
+      }
+
+      .card i {
+        font-size: 2rem;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+      }
+
+      .card h3 {
+        margin-bottom: 12px;
+        font-size: 1.3rem;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #ccc;
+      }
+
+      .tech-box {
+        margin-top: 50px;
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .icons {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 25px;
+        font-size: 3rem;
+      }
+
+      .icons i {
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      .icons i:hover {
+        color: var(--accent-color);
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Universal orqaga qaytish havolasi -->
+      <a href="javascript:history.back()" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Orqaga qaytish
+      </a>
+
+      <div class="header">
+        <h1>Mobile Development</h1>
+        <p>iOS va Android platformalari uchun yuqori sifatli va zamonaviy ilovalar yaratish.</p>
+      </div>
+
+      <div class="features">
+        <div class="card">
+          <i class="fas fa-layer-group"></i>
+          <h3>Cross-Platform</h3>
+          <p>
+            Bitta kod orqali ham iOS, ham Android uchun ishlaydigan ilovalar yaratish. Bu vaqt va
+            xarajatni tejaydi.
+          </p>
+        </div>
+        <div class="card">
+          <i class="fas fa-bolt"></i>
+          <h3>High Performance</h3>
+          <p>
+            Tez ishlaydigan, foydalanuvchini kutib qolishga majbur qilmaydigan optimallashgan
+            ilovalar.
+          </p>
+        </div>
+        <div class="card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Modern UI/UX</h3>
+          <p>
+            Foydalanuvchilar uchun qulay va vizual jihatdan jozibador bo'lgan interfeys dizayni.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-box">
+        <h3>Ishlatiladigan Texnologiyalar</h3>
+        <div class="icons">
+          <i class="fab fa-react" title="React Native"></i>
+          <i class="fab fa-google" title="Flutter"></i>
+          <i class="fab fa-apple" title="iOS (Swift)"></i>
+          <i class="fab fa-android" title="Android (Kotlin)"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

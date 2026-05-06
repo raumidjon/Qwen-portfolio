@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI/UX Design - Umidjon Raxmonjonov</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #0b0e14;
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --accent-color: #a855f7; /* UI/UX uchun binafsha rang */
+        --text-color: #ffffff;
+        --secondary-text: #94a3b8;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        background-image:
+          radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
+          radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1000px;
+        width: 100%;
+        background: var(--glass-bg);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 40px;
+        padding: 50px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        color: var(--secondary-text);
+        text-decoration: none;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        transition: 0.3s;
+        gap: 8px;
+      }
+
+      .back-btn:hover {
+        color: var(--accent-color);
+        transform: translateX(-5px);
+      }
+
+      .header {
+        text-align: left;
+        margin-bottom: 50px;
+        border-left: 5px solid var(--accent-color);
+        padding-left: 20px;
+      }
+
+      .header h1 {
+        font-size: 3rem;
+        margin: 0;
+        background: linear-gradient(to right, #a855f7, #6366f1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .header p {
+        color: var(--secondary-text);
+        font-size: 1.1rem;
+        max-width: 600px;
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .step-card {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 30px;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .step-card:hover {
+        background: rgba(168, 85, 247, 0.05);
+        border-color: var(--accent-color);
+        transform: translateY(-5px);
+      }
+
+      .step-number {
+        font-size: 0.8rem;
+        color: var(--accent-color);
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .step-card i {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #a855f7, #6366f1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .step-card h3 {
+        margin: 10px 0;
+        font-size: 1.2rem;
+      }
+
+      .step-card p {
+        font-size: 0.85rem;
+        color: var(--secondary-text);
+        line-height: 1.6;
+      }
+
+      .tools-section {
+        margin-top: 60px;
+        text-align: center;
+      }
+
+      .tools-section h4 {
+        color: var(--secondary-text);
+        margin-bottom: 30px;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      .tool-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        opacity: 0.7;
+      }
+
+      .tool-icons div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s;
+      }
+
+      .tool-icons div:hover {
+        opacity: 1;
+        color: var(--accent-color);
+        transform: scale(1.1);
+      }
+
+      .tool-icons i {
+        font-size: 2.5rem;
+      }
+
+      .tool-icons span {
+        font-size: 0.75rem;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 30px;
+        }
+        .header h1 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="javascript:history.back()" class="back-btn">
+        <i class="fas fa-long-arrow-alt-left"></i> Orqaga qaytish
+      </a>
+
+      <div class="header">
+        <h1>UI/UX Design</h1>
+        <p>
+          Foydalanuvchilarning his-tuyg'ulari va qulayligiga asoslangan raqamli mahsulotlar
+          yaratish.
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="step-card">
+          <span class="step-number">01. Tadqiqot</span>
+          <i class="fas fa-fingerprint"></i>
+          <h3>UX Research</h3>
+          <p>Maqsadli auditoriyani o'rganish va ularning muammolariga yechim topish.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">02. Struktura</span>
+          <i class="fas fa-vector-square"></i>
+          <h3>Wireframing</h3>
+          <p>Sayt yoki ilovaning skeletini chizish va navigatsiyani rejalashtirish.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">03. Vizual</span>
+          <i class="fas fa-palette"></i>
+          <h3>UI Design</h3>
+          <p>Ranglar, tipografiya va komponentlar yordamida chiroyli ko'rinish berish.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">04. Sinov</span>
+          <i class="fas fa-vial"></i>
+          <h3>Prototyping</h3>
+          <p>Dizaynni interaktiv holatga keltirish va foydalanuvchilar bilan test qilish.</p>
+        </div>
+      </div>
+
+      <div class="tools-section">
+        <h4>Ish qurollarim</h4>
+        <div class="tool-icons">
+          <div><i class="fab fa-figma"></i><span>Figma</span></div>
+          <div><i class="fab fa-adobe"></i><span>Adobe XD</span></div>
+          <div><i class="fas fa-pencil-ruler"></i><span>Sketch</span></div>
+          <div><i class="fab fa-sketch"></i><span>Photoshop</span></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
