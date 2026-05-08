@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messenger | Real-time Chat</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    :root {
+      --bg-dark: #0f0c29;
+      --glass: rgba(255, 255, 255, 0.05);
+      --accent: #00d2ff;
+      --sent-msg: #6c5ce7;
+    }
+
+    body {
+      background: radial-gradient(circle at bottom left, #1a1a2e, #0a0a0c);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .messenger-app {
+      width: 95%;
+      max-width: 1100px;
+      height: 85vh;
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* Contacts Side */
+    .contacts-bar {
+      width: 300px;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .user-header {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+    }
+
+    .search-box {
+      padding: 0 15px 15px;
+    }
+    .search-box input {
+      width: 90%;
+      background: var(--glass);
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      color: white;
+      outline: none;
+    }
+
+    .contact {
+      display: flex;
+      padding: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact:hover,
+    .contact.active {
+      background: var(--glass);
+      border-left: 4px solid var(--accent);
+    }
+    .contact-info {
+      margin-left: 15px;
+    }
+    .contact-info h4 {
+      margin: 0;
+      font-size: 14px;
+    }
+    .contact-info p {
+      margin: 5px 0 0;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    /* Chat Window */
+    .chat-window {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header {
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .header-icons i {
+      margin-left: 20px;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .messages {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .msg {
+      max-width: 70%;
+      padding: 12px 18px;
+      border-radius: 18px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .received {
+      background: var(--glass);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+    .sent {
+      background: var(--sent-msg);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-footer {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .chat-footer input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: white;
+      outline: none;
+    }
+
+    .chat-footer button {
+      background: var(--accent);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div class="messenger-app">
+      <aside class="contacts-bar">
+        <div class="user-header">
+          <img src="https://i.pravatar.cc/150?img=12" class="avatar" />
+          <h3>Chatlar</h3>
+          <i class="fas fa-edit"></i>
+        </div>
+
+        <div class="search-box">
+          <input type="text" placeholder="Qidirish..." />
+        </div>
+
+        <div class="contact-list">
+          <div class="contact active">
+            <img src="https://i.pravatar.cc/150?img=32" class="avatar" />
+            <div class="contact-info">
+              <h4>Ali Valiyev</h4>
+              <p>Faylni yubordim...</p>
+            </div>
+          </div>
+          <div class="contact">
+            <img src="https://i.pravatar.cc/150?img=44" class="avatar" />
+            <div class="contact-info">
+              <h4>Dasturchilar guruhi</h4>
+              <p>Yangi kod tayyor!</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="chat-window">
+        <header class="chat-header">
+          <div class="active-user">
+            <img src="https://i.pravatar.cc/150?img=32" class="avatar" />
+            <div>
+              <h4>Ali Valiyev</h4>
+              <span>onlayn</span>
+            </div>
+          </div>
+          <div class="header-icons">
+            <i class="fas fa-phone"></i>
+            <i class="fas fa-video"></i>
+            <i class="fas fa-info-circle"></i>
+          </div>
+        </header>
+
+        <div class="messages" id="message-container">
+          <div class="msg received">Salom! Loyiha qanday ketyapti?</div>
+          <div class="msg sent">Yaxshi, hozirgina video qo'ng'iroq funksiyasini tugatdim.</div>
+          <div class="msg received">Zo'r! Fayllarni ham tekshirib ko'rdingmi?</div>
+        </div>
+
+        <footer class="chat-footer">
+          <i class="far fa-smile"></i>
+          <i class="fas fa-paperclip"></i>
+          <input type="text" id="msgInput" placeholder="Xabar yozing..." />
+          <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      function sendMessage() {
+        const input = document.getElementById('msgInput')
+        const container = document.getElementById('message-container')
+
+        if (input.value.trim() !== '') {
+          // Yangi xabar yaratish
+          const newMsg = document.createElement('div')
+          newMsg.classList.add('msg', 'sent')
+          newMsg.innerText = input.value
+
+          container.appendChild(newMsg)
+
+          // Chatni eng pastiga tushirish
+          container.scrollTop = container.scrollHeight
+
+          // Inputni tozalash
+          input.value = ''
+
+          // Javob qaytarish (Simulyatsiya)
+          setTimeout(() => {
+            const reply = document.createElement('div')
+            reply.classList.add('msg', 'received')
+            reply.innerText = 'Xabaringizni qabul qildim! (Auto-reply)'
+            container.appendChild(reply)
+            container.scrollTop = container.scrollHeight
+          }, 1000)
+        }
+      }
+
+      // Enter bossa ham yuborish
+      document.getElementById('msgInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage()
+      })
+    </script>
+  </body>
+</html>
