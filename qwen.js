@@ -153,7 +153,7 @@ document.querySelectorAll('.service-card, .project-card').forEach((card) => {
   })
 })
 
-const TOKEN = '8751841561:AAGSnWMzLhBop3hORil2tDkTtxxm_STbiFE'
+const TOKEN = '8659638964:AAFrYgD6-_nzito-KD8RLkWrRC2CL6D2AHs'
 const CHAT_ID = '7293175355–'
 
 const form = document.getElementById('contactForm')
